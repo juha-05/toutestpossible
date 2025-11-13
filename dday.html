@@ -40,11 +40,11 @@
       let diffDay = Math.ceil(diffMs / (1000*60*60*24));
 
       if (diffDay === 0) {
-        document.write("<D-Day입니다");
+        document.write("<h3>D-Day입니다</h3>");
       } else if (diffDay > 0) {
-        document.write("D-" + diffDay + "일 남았습니다.");
+        document.write("<h3>D-" + diffDay + "일 남았습니다.</h3>");
       } else {
-        document.write("D+" + Math.abs(diffDay) + "일 지났습니다."); 
+        document.write("<h3>D+" + Math.abs(diffDay) + "일 지났습니다.</h3>"); 
       }
     }
 
