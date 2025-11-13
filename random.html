@@ -25,14 +25,14 @@
     let inputString = prompt("항목을 콤마(,)로 구분하여 입력하세요", defaultList);
 
     if (!inputString){
-      document.write('뽑기를 취소했습니다.')
+      document.write('뽑기를 취소했습니다.');
     }
     else{
       let items = inputString.split(',');
       let index = Math.floor(Math.random()*items.length);
 
       let choice = items[index];
-      choice.trim();
+      choice = choice.trim();
 
       document.write(choice);
     }
