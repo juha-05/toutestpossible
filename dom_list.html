@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>주하의 인터넷활용 실습 템플릿</title>
+  <style>
+    body{
+      font-family:'Noto Sans KR', sans-serif;
+      padding:30px;
+    }
+    ul{
+      list-style-type:none;
+      padding:0;
+    }
+    li{
+      background-color:#f1f1f1;
+      margin:5px 0;
+      padding:10px;
+      border-bottom:1px solid #ccc;
+      cursor:pointer;
+    }
+    li:hover{
+      background-color:#ffdddd;
+    }
+    li:hover::after{
+      content:"클릭하여 삭제";
+      color:#740d0d;
+      font-size:0.8em;
+      font-weight:bold;
+    }
+    button{
+      padding:10px 20px;
+      font-size:16px;
+      background-color:#740d0d;
+      color:white;
+      border:none;
+      border-radius:4px;
+      cursor:pointer;
+    }
+  </style>
+  <script>
+    function addComment(){
+      var inputStr = prompt("댓글 내용을 입력하세요:", "교수님 항상 유익한 수업 감사합니다.");
+
+      if(inputStr==null || inputStr.trim()==""){
+        return;
+      }
+
+      var parent=document.getElementById("commentList");
+
+      var newLi = document.createElement("li");
+      newLi.innerHTML = inputStr;
+
+      newLi.onclick = function(){
+        var p = this.parentElement;
+        p.removeChild(this);
+      };
+
+      parent.appendChild(newLi);
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="addComment()">
+<header>
+  <h1>이름: 이주하</h1>
+  <p class="subtitle">Juha Lee</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<main class="container">
+<section>
+  <h2>댓글 추가/삭제 프로그램</h2>
+  <h3>댓글 목록</h3>
+  <p>아래 목록을 클릭하면 해당 목록이 삭제됩니다.</p>
+  <hr>
+  <button onclick="addComment()">+ 댓글 추가하기</button>
+  <ul id="commentList">
+
+  </ul>
+</section>
+</main>
+<footer>
+  <small>&copy; <span id="year"></span> 이주하</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

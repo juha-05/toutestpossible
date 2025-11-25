@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>주하의 인터넷활용 실습 템플릿</title>
+  <style>
+    body{
+      font-family:'Noto Sans KR', sans-serif;
+      text-align:center;
+      padding:50px;
+    }
+
+    #target{
+      font-size:20px;
+      font-weight:bold;
+      padding:20px;
+      border:2px solid #ccc;
+      margin:20px auto;
+      width:80%;
+      transition:all 0.3s;
+    }
+    
+    button{
+      padding:10px 15px;
+      font-size:16px;
+      margin:5px;
+      cursor: pointer;
+      background-color: #eee;
+      border: 1px solid #999;
+      border-radius:5px;
+    }
+
+    button:hover{
+      background-color:#ddd;
+    }
+  </style>
+  <script>
+    function changeColor(){
+      var obj = document.getElementById("target");
+      if(obj.style.color=="black"){
+        obj.style.color="#740d0d";
+      }
+      else{
+        obj.style.color="black";
+      }
+    }
+
+    function changeSize(){
+      var obj = document.getElementById("target");
+      if(obj.style.fontSize=="32px"){
+        obj.style.fontSize="20px";
+      }
+      else{
+        obj.style.fontSize="32px";
+      }
+    }
+
+    function changeBackground(){
+      var obj = document.getElementById("target");
+      obj.style.backgroundColor="#bea4a4";
+    }
+
+    function toggleVisibility(){
+      var obj = document.getElementById("target");
+      if(obj.style.display=="none"){
+        obj.style.display="block";
+      }
+      else{
+        obj.style.display="none";
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>이름: 이주하</h1>
+  <p class="subtitle">Juha Lee</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<main class="container">
+<section>
+  <h2>DOM 스타일 변환기</h2>
+  <p id="target">이 문장의 스타일을 바꿔보세요!</p>
+
+  <button onclick="changeColor()">글자색 변경</button>
+  <button onclick="changeSize()">크게 보기</button>
+  <button onclick="changeBackground()">배경 강조</button>
+  <button onclick="toggleVisibility()">숨기기/보이기</button>
+</section>
+</main>
+<footer>
+  <small>&copy; <span id="year"></span> 이주하</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
